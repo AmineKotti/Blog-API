@@ -1,0 +1,51 @@
+version: '3'
+
+services:
+  blog-api:
+    build: .
+    container_name: blog-apiContainer
+    ports:
+      - "3000:3000" 
+    volumes:
+      - ./:/app
+    depends_on:
+      - mysql_blogApi
+    networks:
+      - blogApiNetwork
+    restart: always
+    
+
+  mysql_blogApi:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: blogdb
+      MYSQL_USER: user-db
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_HOST : mysql_blogApi
+    volumes:
+      - /c/Users/Amine/Documents/mysql-gl:/var/lib/mysql
+      - ./databaseSql/:/docker-entrypoint-initdb.d/
+    networks:
+      - blogApiNetwork
+    ports:
+      - "3307:3306"
+    restart: always
+   
+ 
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:5.1.0
+    environment:
+      - PMA_HOST=mysql_blogApi
+    networks:
+      - blogApiNetwork
+    ports:
+      - "9080:80"
+    depends_on:
+      - mysql_blogApi
+    restart: always
+
+networks:
+  blogApiNetwork:
+    external:
+      name: clientsBlogApi      

@@ -1,0 +1,7 @@
+{
+    "host" : "mysql_blogApi",
+    "user" : "user-db",
+    "password" : "password",
+    "database" : "blogdb",
+    "port" : "3306"
+}
