@@ -1,6 +1,7 @@
-const db = require('../util/database')
-
-module.exports = class post {
+class post {
+    id;
+    text;
+    date;
     constructor(id,text,date)
     {
         this.id = id,

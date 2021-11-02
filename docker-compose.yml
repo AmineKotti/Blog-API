@@ -25,7 +25,6 @@ services:
       MYSQL_HOST : mysql_blogApi
     volumes:
       - /c/Users/Amine/Documents/mysql-gl:/var/lib/mysql
-      - ./databaseSql/:/docker-entrypoint-initdb.d/
     networks:
       - blogApiNetwork
     ports:

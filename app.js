@@ -1,6 +1,5 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-// const mysql = require('mysql')
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -9,15 +8,13 @@ app.use(bodyParser.urlencoded({ extended : false}));
 app.use(bodyParser.json());
 
 
-const userRouters = require('./routes/user.js')
+const userRouters = require('./routes/userRoutes.js')
 const postRouters = require('./routes/post.js')
 
 const errorController = require('./controllers/error')
 
-//  app.use(errorController.get404);
-//  app.use(errorController.get500);
-
-
+// app.use(errorController.get404);
+// app.use(errorController.get500);
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin','*');
@@ -27,8 +24,8 @@ app.use((req, res, next) => {
 });
 
 
-app.use('/users', userRouters);
-app.use('/posts', postRouters);
+app.use('/', userRouters);
+app.use('/', postRouters);
 
 
 // //MySQL
