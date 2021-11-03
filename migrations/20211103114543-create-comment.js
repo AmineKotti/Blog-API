@@ -14,11 +14,13 @@ module.exports = {
       date: {
         type: Sequelize.INTEGER
       },
-      userId: {
-        type: Sequelize.INTEGER
+      post_id: {
+        type: Sequelize.UUID,
+        allowNull: false
       },
-      postId: {
-        type: Sequelize.INTEGER
+      user_id: {
+        type: Sequelize.UUID,
+        allowNull: false
       },
       createdAt: {
         allowNull: false,

@@ -1,9 +1,10 @@
 {
   "development": {
-    "username": "root",
-    "password": "",
+    "username": "user-db",
+    "password": "password",
     "database": "blogdb",
-    "host": "127.0.0.1",
+    "host": "mysql_blogApi",
+    "port" : "3306",
     "dialect": "mysql"
   },
   "test": {
