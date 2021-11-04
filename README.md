@@ -47,9 +47,7 @@ curl --location --request GET 'http://localhost:3000/user/2'
 ``` bash
 curl --location --request GET 'http://localhost:3000/post/1'  
 ```  
-![GitHub Logo](https://user-images.githubusercontent.com/36281616/139834742-7b32a924-8c31-4396-a730-82fb1f6d85a8.PNG)
 
-![GitHub Logo](https://user-images.githubusercontent.com/36281616/139834773-abc959d2-44a5-4eb8-9f2b-639edda4122f.PNG)
 
 
 
