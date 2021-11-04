@@ -1,6 +1,4 @@
-# Blog-API
-
-# Blog-API
+# Blog-API WITH SEQEUIZE ORM
 ## mode dev ##
 ### clone project blog-API ###
 - git clone https://github.com/AmineKotti/Blog-API
@@ -35,7 +33,7 @@ curl --location --request POST 'http://localhost:3000/user' \
 }'
 ```   
 
-![GitHub Logo](https://user-images.githubusercontent.com/36281616/139834420-e20bcdcb-3a83-4e9b-a023-3704a3dcc0c2.PNG)
+![GitHub Logo](https://user-images.githubusercontent.com/36281616/140239476-8d0d7078-c5ef-44c9-b660-a106c3599425.PNG)
 
 
 
@@ -43,8 +41,7 @@ curl --location --request POST 'http://localhost:3000/user' \
 ``` bash
 curl --location --request GET 'http://localhost:3000/user/2'
 ```  
-![GitHub Logo](https://user-images.githubusercontent.com/36281616/139834567-f2acaeb7-0157-46d4-89b8-5202b427a299.PNG)
-
+![GitHub Logo](https://user-images.githubusercontent.com/36281616/140239517-2741c798-75d2-40eb-8e17-5343dcaa9c4b.PNG)
 
 ## CURL get post by post id:
 ``` bash
@@ -53,9 +50,6 @@ curl --location --request GET 'http://localhost:3000/post/1'
 ![GitHub Logo](https://user-images.githubusercontent.com/36281616/139834742-7b32a924-8c31-4396-a730-82fb1f6d85a8.PNG)
 
 ![GitHub Logo](https://user-images.githubusercontent.com/36281616/139834773-abc959d2-44a5-4eb8-9f2b-639edda4122f.PNG)
-
-
-
 
 
 
