@@ -1,16 +1,29 @@
-name: publish
+name: Build and Push Docker container
 
-on: [push]
+on: 
+  push:
+    branches:
+      - main
 
 jobs:
-  publish-blog-api_blog-api-image:
+  build-and-push:
+
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v1
 
-    - name: Build the blog-api_blog-api Docker image
-      run: |
-        echo $CR_PAT | docker login ghcr.io -u majdi-1105 --password-stdin
-      env:
-        CR_PAT: ${{ secrets.CR_PAT }}
+    - name: Build the Docker image
+      run: docker build -t ghcr.io/Majdi-105/blog-api_blog-api:14-slim .
+
+    - name: Setup GitHub Container Registry
+      run: echo "$" | docker login https://ghcr.io -u $ --password-stdin
+
+    - name: push to GitHub Container Registry
+      run:  docker push ghcr.io/Majdi-105/blog-api_blog-api:14-slim
+
+
+
+
+
+        
