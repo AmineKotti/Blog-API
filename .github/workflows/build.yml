@@ -1,13 +1,16 @@
-on: push
-name: Main Workflow
+name: publish
+
+on: [push]
+
 jobs:
-  sonarQubeTrigger:
-    name: SonarQube Trigger
+  publish-blog-api_blog-api-image:
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@master
-    - name: SonarQube Scan
-      uses: kitabisa/sonarqube-action@v1.1.0
-      with:
-        host: http://51.75.5.6:9000
-        login: 0c96916fbb34c32a656ac3ee31d1c2758016cd64
+    - uses: actions/checkout@v2
+
+    - name: Build the blog-api_blog-api Docker image
+      run: |
+        echo $CR_PAT | docker login ghcr.io -u majdi-1105 --password-stdin
+      env:
+        CR_PAT: ${{ secrets.CR_PAT }}
